@@ -1,0 +1,11 @@
+<div id="{{user['_key']}}" class="user">
+    <div>User ID: {{user["_key"]}}</div>
+    <form id="frm-{{user['_key']}}">
+        <input type="text" name="user_first_name" value="{{user['user_first_name']}}" placeholder="First Name"
+            mix-post="/update-user/{{user['_key']}}" mix-data="#frm-{{user['_key']}}" mix-blur>
+
+        <input type="text" name="user_last_name" value="{{user['user_last_name']}}" placeholder="Last Name"
+            mix-post="/update-user/{{user['_key']}}" mix-data="#frm-{{user['_key']}}" mix-blur>
+    </form>
+    <button mix-delete="/users/{{user['_key']}}" mix-default="Delete" mix-await="Deleting...">Delete</button>
+</div>

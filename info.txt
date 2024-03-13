@@ -1,0 +1,29 @@
+Mandatory # 1
+
+Using python "Bottle", docker, mixhtml, and ArangoDB:
+
+Create a website that can do a CRUD against the "users" collection in ArangoDB.
+
+The page can:
+
+Create a user (name and last name)
+View all users
+Delete a user based on the user's _id
+Update a user (name and/or last name) based on the user's _id
+
+Tips
+Look at the pattern
+In Python use a module named requests to do POST
+mixhtml has mix-blur
+
+
+NOTES:
+Only POST to this URL
+/_db/_system/_api/cursor
+
+Add in the raw body json e.g.:
+{
+  "query": "FOR user IN users RETURN user"
+}
+
+This e.g. will return all users
