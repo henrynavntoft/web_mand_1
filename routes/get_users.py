@@ -14,6 +14,6 @@ def _():
         users_data = arango_response.json()
         return template('index', users=users_data['result'])
     except Exception as ex:
-        return "An error occurred: {}".format(ex)
+        print("Error in / route", str(ex))
     finally:
         pass

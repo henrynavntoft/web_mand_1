@@ -29,9 +29,7 @@ def _():
         # Use the user_entry template to generate HTML for the new user
             new_user_html = template('_user.html', user=new_user)
             return f"<template mix-target='#users' mix-top>{new_user_html}</template>"
-        else:
-            response.status = arango_response.status_code
-            return f"Failed to create user: {arango_response.text}"
-    except requests.exceptions.RequestException as e:
-        response.status = 500
-        return f"An error occurred: {e}"
+    except Exception as ex:
+        print(f"Error creating a new user: {ex}")
+    finally:
+        pass

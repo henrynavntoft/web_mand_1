@@ -24,6 +24,7 @@ def _(key):
         else:
             response.status = arango_response.status_code
             return f"<template mix-target='#message'>Failed to delete user: {arango_response.text}</template>"
-    except requests.exceptions.RequestException as e:
-        response.status = 500
-        return f"<template mix-target='#message'>An error occurred: {e}</template>"
+    except Exception as e:
+        print("Error in deleting user: ", str(e))
+    finally:
+        pass
